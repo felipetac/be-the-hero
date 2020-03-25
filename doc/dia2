@@ -1,0 +1,31 @@
+cd backend
+
+yarn init
+
+yarn add express
+
+node index.js
+
+yarn add nodemon -D
+
+-Utilizou KNEX.js PARA QUERYBUIDER para o projeto instalando a lib "knex"
+-Utilizou SQLite para projeto instalando a lib "sqlite3"
+
+yarn add kenx
+yarn add sqlite3
+
+-Criando arquivos de configuração do banco de dados
+
+npx knex init
+
+-Criando Migrations para criação de tabelas. ex:
+
+npx knex migrate:make create_ong
+
+-Dentro do arquivo gerado tem exemplo de criação e drop de tabela
+
+-Para executar a migration:
+
+npx knex migrate:latest
+
+
