@@ -1,14 +1,11 @@
-const express = require('express');
-const cors = require('cors');
-const routes = require('./routes');
+const express = require("express");
+const routes = require("./routes");
+const cors = require("cors");
 
 const app = express();
 
+app.use(express.json());
 app.use(cors());
-
-//Informa que usurá requisições formato JSON
-app.use(express.json())
-
 app.use(routes);
 
-app.listen(3333)
+app.listen(3333);

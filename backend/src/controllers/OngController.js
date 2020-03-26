@@ -1,42 +1,35 @@
-const crypto = require('crypto');
-const connection = require('../database/connection');
+const connection = require("../database/connection");
+const crypto = require("crypto");
 
 module.exports = {
-    async index(request, response) {
-        const ongs = await connection('ongs').select('*');
-        return response.json(ongs);
-    },
+  async index(req, res) {
+    const ongs = await connection("ongs").select("*");
 
-    async create(request, response) {
+    return res.json(ongs);
+  },
 
-        // Parametros de URL. ex: /users?name=Felipe
-        //const params = request.query 
-        // Parametros de rota. ex: /users/:id
-        //const params = request.params
-        // Parametros de Corpo. ex: RestFul Json Body
-        //const params = request.body
+  async store(req, res) {
+    const {
+      name,
+      email,
+      whatsapp,
+      city,
+      uf
+    } = req.body;
 
-        const {
-            name,
-            email,
-            whatsapp,
-            city,
-            uf
-        } = request.body
+    const id = crypto.randomBytes(4).toString("HEX");
 
-        const id = crypto.randomBytes(4).toString('HEX');
+    await connection("ongs").insert({
+      id,
+      name,
+      email,
+      whatsapp,
+      city,
+      uf
+    });
 
-        await connection('ongs').insert({
-            id,
-            name,
-            email,
-            whatsapp,
-            city,
-            uf
-        })
-
-        return response.json({
-            id
-        });
-    }
-}
+    return res.json({
+      id
+    });
+  }
+};

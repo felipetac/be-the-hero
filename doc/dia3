@@ -1,0 +1,26 @@
+npx create-react-app frontend
+
+Remove os arquivos desnecessários inicialmente:
+
+    - README
+    - App.css
+    - App.test.js
+    - index.css
+    - logo.svg
+    - serviceWorker.js
+    - setupTests.js
+
+Na pasta public deixa só so arquivos:
+
+    - favicon
+    - index.html
+
+Fax um limpa no index.html
+
+"props.children" para pegar propriedades/html interna(o) da tag
+
+para icones instale "react-icons"
+
+
+
+
