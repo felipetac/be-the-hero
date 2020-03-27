@@ -1,7 +1,7 @@
 const connection = require("../database/connection");
 
 module.exports = {
-  async store(req, res) {
+  async create(req, res) {
     const {
       id
     } = req.body;

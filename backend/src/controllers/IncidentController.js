@@ -26,7 +26,7 @@ module.exports = {
     return res.json(incidents);
   },
 
-  async store(req, res) {
+  async create(req, res) {
     const {
       title,
       description,
